@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "outFile": "./build/slide.js"
+  },
+  "include": ["./src/slide.ts"]
+}
