@@ -29,14 +29,14 @@ customElements.define('s-page', Page)
 
 let previous_page_id: string = ""
 
-const change_page = (page_id: string): void => {
+const change_page = (page_id: string, in_class: string, out_class: string): void => {
     const top_page = document.querySelector("div.page[top]")
     const next_page = document.getElementById(page_id)
-    next_page.classList.add("in")
-    top_page.classList.add("out")
+    next_page.classList.add(in_class)
+    top_page.classList.add(out_class)
     next_page.addEventListener("animationend", () => {
-        next_page.classList.remove("in")
-        top_page.classList.remove("out")
+        next_page.classList.remove(in_class)
+        top_page.classList.remove(out_class)
         next_page.setAttribute("top", "")
         top_page.removeAttribute("top")
     })
